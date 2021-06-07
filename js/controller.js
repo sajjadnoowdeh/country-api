@@ -22,19 +22,46 @@ function renderDesc(country){
                 <p>TimeZone: <small>${country.timezones[0]}</small> </p>
                 <p>Code: <small>${country.numericCode}</small> </p>
             </div>
-            <div class="col-6 d-flex flex-column align-items-center">
-                <h1>31OC</h1>
-                <p>Logos,Lg</p>
-                <img width="70px" src="./img/iconfinder_weather-partlycloudy_274769.svg" alt="">
-                <span>cloudy</span>
-            </div>
+            <div class="col-6 d-flex flex-column align-items-center weather"></div>
         </div>
       
       
       `
 }
 function renderWeather(weather){
-    
+    const {description,icon,main} =weather.weather[0];
+     document.querySelector(".weather").innerHTML = `
+            <h1>${Math.round(weather.main.temp - 273.15)}°C</h1>
+            <p>${description}</p>
+            <img width="70px" src="http://openweathermap.org/img/wn/${icon}@2x.png">
+            <span>${main}</span>
+     `
+}
+function renderCards(weather){
+    const {deg,gust,speed} = weather.wind
+    document.querySelector(".cards").innerHTML =`
+        <div class="col-4" >
+            <div id="cards" class="bg-white w-75 text-dark d-flex flex-column align-items-center justify-content-around rounded">
+                <img width="35px" src="./img/celsius-thermometer-svgrepo-com.svg" alt="">
+                <strong class="text-dark">${deg}</strong>
+                <p>deg</p>
+            </div>
+        </div>
+        <div class="col-4 ">
+            <div id="cards" class="m-auto bg-white w-75 text-dark d-flex flex-column align-items-center justify-content-around rounded">
+                <img width="35px" src="./img/wind-svgrepo-com.svg" alt="">
+                <strong class="text-dark">${(gust) ?? 0}</strong>
+                <p>gust</p>
+        </div>
+        
+        </div>
+        <div class="col-4 ">
+            <div id="cards" class="ml-auto bg-white w-75 text-dark d-flex flex-column align-items-center justify-content-around rounded">
+                <img width="35px" src="./img/dashboard-svgrepo-com.svg" alt="">
+                <strong class="text-dark">${speed}</strong>
+                <p>speed</p>
+        </div>
+    `
 }
 function scrollApp(){
     document.querySelector(".main-app").style.overflowY = "scroll"

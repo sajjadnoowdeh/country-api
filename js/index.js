@@ -24,6 +24,8 @@ async function hundleCountry(code){
      const weather = await _GetWeatherCountry(countryFind.capital);
      console.log(weather);
      renderDesc(countryFind)
+     renderWeather(weather)
+     renderCards(weather)
  }
 
 
