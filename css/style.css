@@ -1,0 +1,56 @@
+body{
+    font-family: 'Lato', sans-serif;
+    background:linear-gradient(45deg,rgb(0 0 0 / 52%),rgb(0 0 0 / 52%)),url(../flag-Stars-and-Stripes-May-1-1795.jpg);
+    /* filter: blur(8px); */
+    background-size: cover;
+}
+
+/* main app */
+.main-app{
+    padding: 20px 35px;
+    width: 27rem;
+    overflow-y: hidden;
+    height: 37rem;
+    box-shadow: 2px 5px 20px black;
+    background-image: linear-gradient(to right bottom, #fbbd8b, #feb089, #fea28b, #fd9690, #f88a97, #f5809b, #f076a0, #e96da7, #e462ac, #dd57b3, #d44ebc, #c847c5);
+}
+
+.discription-country .small{
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+
+#cards{
+    height: 10rem;
+    width: 90% !important;
+}
+.discription-country p{
+ font-size: 18px;
+ font-weight: bold;
+}
+.search{
+    outline:none;
+}
+
+li{
+    list-style: none;
+}
+
+.country{
+ opacity: 0;
+ padding: 6px;
+;
+ cursor: pointer;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: translateX(-28px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
