@@ -1,60 +1,138 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-      <div class="container h-100 d-flex align-items-center ">
-          <div class="main-app text-white m-auto "">
-                  <div class="row">
-                      <div class="col-12">
-                         <h1 class="text-center"> Api Country</h1>
-                         <div class="main-search my-3">
-                             <input type="text" class="search w-100 rounded-pill border-0 py-1 px-3" placeholder="Search Country">
-                         </div>
-                         <div class="discription-country">
-                             <ul class="p-0 list-country">
-                           
-                               
-                             </ul>
-                             <!-- <div class="row d-none desc-country">
-                                 <div class="col-6">
-                                     <p>Name: <small>Afghinstan</small> </p>
-                                     <p>Native Name: <small>Kubol</small> </p>
-                                     <p>Rgion: <small>Asia</small> </p>
-                                     <p>Pupulation: <small>234324</small> </p>
-                                     <p>Langauge: <small>Englisi</small> </p>
-                                     <p>TimeZone: <small>UTC</small> </p>
-                                     <p>Code: <small>123</small> </p>
-                                 </div>
-                                 <div class="col-6 d-flex flex-column align-items-center">
-                                     <h1>31OC</h1>
-                                     <p>Logos,Lg</p>
-                                     <img width="70px" src="./iconfinder_weather-partlycloudy_274769.svg" alt="">
-                                     <span>cloudy</span>
-                                 </div>
-                             </div> -->
-                         </div>
-                         <div class="row no-gutters cards">
-                            <canvas id="icon1" width="128" height="128"></canvas>
-                            <canvas id="icon2" width="128" height="128"></canvas>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link href="https://static.neshan.org/sdk/openlayers/5.3.0/ol.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://static.neshan.org/sdk/openlayers/5.3.0/ol.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css" /> 
+  
+
+    <!-- links temp---------- -->
+<style>
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+</style>
+  </head>
+   <body>
+    <div class="container ">  
+        <div class="row no-gutters app-countery" >
+            <div class="col-md-12  d-flex align-items-center">
+                <div class="main-app text-white ml-auto ">
+                    <div class="row">
+                        <div class="col-12">
+                        <h1 class="text-center">Api Country</h1>
+                        <div class="main-search my-3">
+                            <input
+                            type="text"
+                            class="search w-100 rounded-pill border-0 py-1 px-3"
+                            placeholder="Search Country"
+                            />
+                        </div>
+                        <div class="discription-country">
+                            <ul class="p-0 list-country"></ul>
+             
+                        </div>
+                        <div class="row no-gutters cards mb-5">
                             
-                      </div>
-                  </div>
-          </div>
-      </div> 
-</body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-<script src="./js/globals.js"></script>
-<script src=".//js/_services.js" ></script>
-<script src="./js/controller.js" ></script>
-<script src="./js/index.js" ></script>
+                        </div>
+                        </div>
+                    </div>
+                 </div>
+
+
+            </div>
+        
+        </div>
+
+      
+       
+    </div> 
+
+
+    <!-- modal -->
+   <div class="row">
+       <div class="col-lg-12 modal-show">
+   
+   
+        <!-- Modal -->
+      
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header align-items-center">
+                <h5 class="modal-title "" id="exampleModalLabel">Iran</h5>
+                <img width="50px" height="50px" class="ml-4 img-modal" src="./img/flag-Stars-and-Stripes-May-1-1795.jpg" alt="">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+               <div class="row" style="
+               min-height: 18rem;
+           ">
+                   <div class="col-md-4">
+                      <ul class="d-flex flex-column justify-content-between h-100">
+                 
+                        <li>Native Name: <a  class="native"  href="#">Tehran</a></li>
+                        <li>Capital: <a  class="capital" href="#">safs</a></li>
+                         <li>Regin<a  class="regin" href="#"></a></li>
+                         <li>Pupulation: <a  class="pup" href="#"></a></li>
+                         <li>Langauge: <a class="lang"  href="#"></a></li>
+                         <li>TimeZone: <a  class="time" href="#"></a></li>
+                         <li>Code<a class="code"  href="#"></a></li>
+
+                      </ul>
+                   </div>
+                   <div class="col-lg-8 neshan" style="height: 20rem;">
+    
+                   </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+        <!-- end col -->
+       </div>
+   </div>
+
+
+  </body>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"
+  ></script> 
+
+  <script src="./js/globals.js"></script>
+  <script src=".//js/_services.js"></script>
+  <script src="./js/controller.js"></script>
+  <script src="./js/index.js"></script>
 </html>
